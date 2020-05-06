@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_FLAGS =  -D_GNU_SOURCE   -std=gnu99
 
-C_DEFINES = -DTTYD_VERSION=\"1.6.0-fbaaacc\"
+C_DEFINES = -DTTYD_VERSION=\"1.6.0-5891b63\"
 
 C_INCLUDES = -I/usr/include/json-c 
 

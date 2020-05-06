@@ -14,7 +14,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "TTYD_VERSION=\"1.6.0-fbaaacc\""
+  "TTYD_VERSION=\"1.6.0-5891b63\""
   )
 
 # The include file search paths:
