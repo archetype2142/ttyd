@@ -56,7 +56,7 @@ const baseConfig = {
                 removeComments: true,
                 collapseWhitespace: true,
             },
-            title: 'ttyd - Terminal',
+            title: 'OnRemote',
             template: './template.html'
         })
     ],
