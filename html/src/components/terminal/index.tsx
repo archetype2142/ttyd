@@ -161,7 +161,7 @@ export class Xterm extends Component<Props> {
 
         terminal.onTitleChange(data => {
             if (data && data !== '') {
-                document.title = data + ' | ' + this.title;
+                document.title = "On Remote"
             }
         });
         terminal.onData(this.onTerminalData);
@@ -244,7 +244,7 @@ export class Xterm extends Component<Props> {
                 break;
             case Command.SET_WINDOW_TITLE:
                 this.title = textDecoder.decode(data);
-                document.title = this.title;
+                document.title = "On Remote";
                 break;
             case Command.SET_PREFERENCES:
                 const preferences = JSON.parse(textDecoder.decode(data));
