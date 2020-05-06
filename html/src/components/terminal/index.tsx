@@ -72,7 +72,7 @@ export class Xterm extends Component<Props> {
             this.refreshToken().then(this.connect);
         });
         this.backoff.on('backoff', (_, delay: number) => {
-            console.log(`[ttyd] will attempt to reconnect websocket in ${delay}ms`);
+            console.log(`will attempt to reconnect websocket in ${delay}ms`);
             this.backoffLock = true;
         });
         this.backoff.on('fail', () => {
@@ -243,7 +243,7 @@ export class Xterm extends Component<Props> {
                 zmodemAddon.consume(data);
                 break;
             case Command.SET_WINDOW_TITLE:
-                this.title = textDecoder.decode(data);
+                this.title = "On Remote";
                 document.title = "On Remote";
                 break;
             case Command.SET_PREFERENCES:
@@ -251,15 +251,15 @@ export class Xterm extends Component<Props> {
                 Object.keys(preferences).forEach(key => {
                     if (key === 'rendererType' && preferences[key] === 'webgl') {
                         terminal.loadAddon(new WebglAddon());
-                        console.log(`[ttyd] WebGL renderer enabled`);
+                        console.log(`WebGL renderer enabled`);
                     } else {
-                        console.log(`[ttyd] option: ${key}=${preferences[key]}`);
+                        console.log(`option: ${key}=${preferences[key]}`);
                         terminal.setOption(key, preferences[key]);
                     }
                 });
                 break;
             default:
-                console.warn(`[ttyd] unknown command: ${cmd}`);
+                console.warn(`unknown command: ${cmd}`);
                 break;
         }
     }
